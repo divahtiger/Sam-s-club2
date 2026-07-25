@@ -1,248 +1,284 @@
-This is a complete HTML document for a prelander page. It's designed to promote a Sam's Club survey offer and is ready to be hosted on GitHub Pages.
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Sam's Club Survey | $750 Gift Card</title>
-  <!-- Font Awesome for icons (optional but adds a clean look) -->
+  <title>Sam's Club Survey · $750 Gift Card</title>
+  <!-- Font Awesome 6 (free) for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
     }
 
     body {
-      background: #f2f4f8;
+      background: #eef2f7;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      padding: 24px 16px;
+      margin: 0;
     }
 
-    .card {
-      max-width: 640px;
+    /* main card – clean, elevated, with a hint of warmth */
+    .prelander {
+      max-width: 680px;
       width: 100%;
-      background: white;
-      border-radius: 36px 36px 28px 28px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 20, 40, 0.08);
+      background: #ffffff;
+      border-radius: 40px 40px 32px 32px;
+      box-shadow: 0 25px 50px -12px rgba(0, 20, 40, 0.25), 0 8px 20px rgba(0, 0, 0, 0.04);
       overflow: hidden;
-      transition: all 0.2s ease;
-      padding-bottom: 24px;
+      transition: all 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(2px);
     }
 
-    /* header with gift card imagery */
-    .gift-header {
-      background: linear-gradient(145deg, #0a2e5c 0%, #1b4a7a 100%);
-      padding: 28px 20px 18px 20px;
+    /* ----- HERO / HEADER (dark navy with gold accents) ----- */
+    .hero {
+      background: linear-gradient(145deg, #0a2a4a 0%, #123b66 100%);
+      padding: 28px 22px 24px;
       color: white;
-      text-align: center;
       position: relative;
+      text-align: center;
+      border-bottom: 4px solid #f9c74f;
     }
 
-    .gift-header .badge {
+    .gift-strip {
       display: flex;
       justify-content: center;
-      gap: 28px;
+      gap: 16px;
       flex-wrap: wrap;
-      align-items: baseline;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
-    .gift-header .badge-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.08);
-      padding: 8px 18px;
-      border-radius: 60px;
+    .gift-chip {
+      background: rgba(255, 255, 255, 0.07);
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 215, 0, 0.25);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 1px solid rgba(249, 199, 79, 0.25);
+      border-radius: 80px;
+      padding: 6px 18px 6px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .gift-header .badge-item .amount {
-      font-size: 2.2rem;
+    .gift-chip .amount {
+      font-size: 1.9rem;
       font-weight: 700;
+      color: #f9e47a;
       letter-spacing: 0.5px;
-      color: #f9e47a;
+      line-height: 1.2;
       text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      line-height: 1;
     }
 
-    .gift-header .badge-item .label {
-      font-size: 0.75rem;
+    .gift-chip .label {
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      opacity: 0.9;
+      letter-spacing: 0.8px;
+      color: rgba(255,255,255,0.85);
       font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    .gift-header .badge-item .gift-icon {
-      font-size: 1.4rem;
-      margin-right: 4px;
-      color: #f9e47a;
+    .gift-chip .label i {
+      color: #f9c74f;
+      font-size: 1rem;
     }
 
-    .gift-header h2 {
-      font-size: 1.6rem;
+    .hero-title {
+      font-size: 1.7rem;
       font-weight: 600;
-      margin: 14px 0 6px 0;
+      margin: 10px 0 4px;
       letter-spacing: -0.3px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 4px 10px;
     }
 
-    .gift-header h2 i {
-      color: #f9e47a;
+    .hero-title i {
+      color: #f9c74f;
       font-size: 1.8rem;
-      margin-right: 4px;
     }
 
-    .gift-header .sub {
-      font-size: 1rem;
-      opacity: 0.9;
-      font-weight: 400;
-      background: rgba(0,0,0,0.2);
+    .hero-sub {
+      background: rgba(0, 0, 0, 0.25);
       display: inline-block;
-      padding: 6px 24px;
-      border-radius: 40px;
+      padding: 8px 28px;
+      border-radius: 60px;
+      font-size: 0.95rem;
+      font-weight: 400;
       backdrop-filter: blur(2px);
-      margin-top: 6px;
+      margin: 10px 0 6px;
+      border: 1px solid rgba(255, 215, 0, 0.15);
     }
 
-    .claim-btn {
+    .hero-sub i {
+      margin-right: 8px;
+      color: #f9c74f;
+    }
+
+    /* ----- ACTION BUTTON (exactly as in picture: "Claim Now →" with arrow) ----- */
+    .action-wrap {
+      margin: 12px 0 6px;
+    }
+
+    .btn-claim {
       background: #f9c74f;
       border: none;
-      color: #0a2e5c;
+      color: #0a2a4a;
       font-weight: 700;
-      font-size: 1.3rem;
-      padding: 16px 28px;
-      border-radius: 60px;
-      box-shadow: 0 8px 0 #b47f2e, 0 10px 20px rgba(0,0,0,0.2);
-      transition: all 0.1s ease;
+      font-size: 1.4rem;
+      padding: 18px 36px;
+      border-radius: 80px;
+      box-shadow: 0 8px 0 #b47f2e, 0 12px 28px rgba(0,0,0,0.25);
+      transition: all 0.08s linear;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      margin: 12px 0 6px;
+      gap: 14px;
       border: 1px solid #ffdb7c;
+      letter-spacing: 0.5px;
+      line-height: 1;
     }
 
-    .claim-btn:active {
+    .btn-claim:active {
       transform: translateY(6px);
-      box-shadow: 0 2px 0 #b47f2e, 0 8px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 0 #b47f2e, 0 8px 18px rgba(0,0,0,0.15);
     }
 
-    .claim-btn i {
-      font-size: 1.6rem;
+    .btn-claim i {
+      font-size: 1.8rem;
+      transition: transform 0.15s;
     }
 
+    .btn-claim:hover i {
+      transform: translateX(5px);
+    }
+
+    /* ----- CONTENT (steps + feedback) ----- */
     .content {
-      padding: 18px 24px 10px;
+      padding: 16px 24px 14px;
     }
 
     .steps {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      margin: 20px 0 16px;
+      margin: 18px 0 20px;
     }
 
-    .step-item {
+    .step {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
-      background: #f9fafc;
-      padding: 14px 16px;
-      border-radius: 20px;
-      border-left: 6px solid #1b4a7a;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      gap: 16px;
+      background: #f8faff;
+      padding: 16px 18px;
+      border-radius: 24px;
+      border-left: 6px solid #0a2a4a;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      transition: 0.1s;
     }
 
-    .step-item .step-num {
-      background: #0a2e5c;
+    .step-num {
+      background: #0a2a4a;
       color: white;
-      width: 34px;
-      height: 34px;
-      border-radius: 30px;
+      width: 38px;
+      height: 38px;
+      border-radius: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.1rem;
       flex-shrink: 0;
+      box-shadow: 0 4px 8px rgba(10, 42, 74, 0.15);
     }
 
-    .step-item .step-text {
-      flex: 1;
-    }
-
-    .step-item .step-text h4 {
+    .step-text h4 {
       font-size: 1.1rem;
       font-weight: 600;
-      color: #0a2e5c;
+      color: #0a2a4a;
       margin-bottom: 4px;
-    }
-
-    .step-item .step-text p {
-      color: #3e4a5a;
-      font-size: 0.92rem;
-      line-height: 1.4;
-      opacity: 0.85;
-    }
-
-    .community {
-      margin: 20px 0 10px;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 20px;
-    }
-
-    .community-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-
-    .community-header h3 {
-      font-weight: 600;
-      color: #0a2e5c;
-      font-size: 1.2rem;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .community-header span {
-      color: #5b6f87;
-      font-size: 0.8rem;
-      background: #edf2f7;
-      padding: 4px 14px;
-      border-radius: 50px;
+    .step-text h4 i {
+      color: #1b4a7a;
+      font-size: 1rem;
+    }
+
+    .step-text p {
+      color: #2d3f54;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      opacity: 0.85;
+    }
+
+    /* ----- COMMUNITY FEEDBACK (with "46 comments" & sort) ----- */
+    .community {
+      margin: 24px 0 10px;
+      border-top: 1px solid #e6ecf3;
+      padding-top: 22px;
+    }
+
+    .community-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .community-head h3 {
+      font-weight: 600;
+      color: #0a2a4a;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .community-head h3 i {
+      color: #f9c74f;
+      font-size: 1.2rem;
+    }
+
+    .community-head .sort {
+      background: #edf2f9;
+      padding: 5px 16px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1f3a57;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .comment {
-      background: #f8faff;
-      padding: 14px 18px;
-      border-radius: 24px;
-      margin-bottom: 12px;
-      border: 1px solid #eef2f6;
-      transition: 0.1s;
+      background: #f9fcff;
+      padding: 16px 20px;
+      border-radius: 28px;
+      margin-bottom: 14px;
+      border: 1px solid #eef3f9;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.01);
     }
 
     .comment .name {
       font-weight: 600;
-      color: #0a2e5c;
+      color: #0a2a4a;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -255,175 +291,235 @@ This is a complete HTML document for a prelander page. It's designed to promote 
     }
 
     .comment .text {
-      margin: 6px 0 8px;
-      color: #1e293b;
+      margin: 8px 0 10px;
+      color: #1b2c3e;
       font-size: 0.97rem;
-      line-height: 1.4;
+      line-height: 1.45;
+      padding-left: 4px;
+    }
+
+    .comment .text i.fa-quote-left {
+      color: #b8cbe0;
+      margin-right: 4px;
+      font-size: 0.8rem;
     }
 
     .comment .meta {
       display: flex;
-      gap: 20px;
-      font-size: 0.75rem;
-      color: #64748b;
+      gap: 18px;
+      font-size: 0.78rem;
+      color: #4f6882;
       align-items: center;
-    }
-
-    .comment .meta i {
-      margin-right: 4px;
+      flex-wrap: wrap;
     }
 
     .comment .meta .like {
-      color: #0a2e5c;
+      background: #e9eff6;
+      padding: 2px 14px;
+      border-radius: 50px;
       font-weight: 600;
-      background: #e9edf4;
-      padding: 2px 12px;
-      border-radius: 30px;
+      color: #0a2a4a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .comment .meta .like i {
+      color: #c0392b;
+    }
+
+    .comment-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 4px;
+    }
+
+    .comment-footer .badge-comments {
+      background: #e5edf7;
+      padding: 4px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #123b66;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .footer-note {
       text-align: center;
-      margin: 12px 0 6px;
-      color: #5e6f88;
+      margin: 14px 0 4px;
+      color: #4a607a;
       font-size: 0.75rem;
-      border-top: 1px dashed #dce1e9;
+      border-top: 1px dashed #d3dce8;
       padding-top: 16px;
       letter-spacing: 0.3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     .footer-note i {
       color: #f9c74f;
     }
 
-    /* responsive */
-    @media (max-width: 480px) {
-      .gift-header .badge-item .amount {
-        font-size: 1.8rem;
-      }
-      .gift-header h2 {
+    /* responsiveness */
+    @media (max-width: 550px) {
+      .hero-title {
         font-size: 1.3rem;
       }
-      .claim-btn {
-        font-size: 1.0rem;
-        padding: 14px 20px;
+      .gift-chip .amount {
+        font-size: 1.5rem;
       }
-      .step-item {
-        padding: 12px 12px;
+      .btn-claim {
+        font-size: 1.1rem;
+        padding: 14px 24px;
+        gap: 10px;
+      }
+      .btn-claim i {
+        font-size: 1.4rem;
+      }
+      .step {
+        padding: 12px 14px;
+      }
+      .content {
+        padding: 10px 16px 10px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .gift-strip {
+        gap: 8px;
+      }
+      .gift-chip {
+        padding: 4px 12px;
+      }
+      .gift-chip .amount {
+        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <!-- header with gift card visual -->
-    <div class="gift-header">
-      <div class="badge">
-        <div class="badge-item">
+  <div class="prelander">
+
+    <!-- HERO with three $750 gift cards + "Claim Now →" -->
+    <div class="hero">
+      <div class="gift-strip">
+        <div class="gift-chip">
           <span class="amount">$750</span>
-          <span class="label"><i class="fas fa-gift gift-icon"></i> GIFT CARD</span>
+          <span class="label"><i class="fas fa-gift"></i> GIFT CARD</span>
         </div>
-        <div class="badge-item">
+        <div class="gift-chip">
           <span class="amount">$750</span>
-          <span class="label"><i class="fas fa-gift gift-icon"></i> GIFT CARD</span>
+          <span class="label"><i class="fas fa-gift"></i> GIFT CARD</span>
         </div>
-        <div class="badge-item">
+        <div class="gift-chip">
           <span class="amount">$750</span>
-          <span class="label"><i class="fas fa-gift gift-icon"></i> GIFT CARD</span>
+          <span class="label"><i class="fas fa-gift"></i> GIFT CARD</span>
         </div>
       </div>
-      
-      <h2>
-        <i class="fas fa-gift"></i> Sam's Club <span style="font-weight:300; color:#d4e2ff;">|</span> $750 Gift Card
-      </h2>
-      <div style="margin: 10px 0 8px;">
-        <span class="sub"><i class="fas fa-clipboard-list" style="margin-right: 8px;"></i> Take our quick survey & get rewarded</span>
+
+      <div class="hero-title">
+        <i class="fas fa-gift"></i> Sam's Club <span style="font-weight:300; color:#b0cde0;">|</span> $750 Gift Card
       </div>
-      <button class="claim-btn" onclick="alert('🎉 Claim your $750 gift card – survey starts now!')">
-        <i class="fas fa-arrow-right"></i> Claim Now →
-      </button>
+      <div class="hero-sub">
+        <i class="fas fa-clipboard-list"></i> Take our quick survey & get rewarded
+      </div>
+
+      <!-- ACTION BUTTON: exactly as in picture "Claim Now →" -->
+      <div class="action-wrap">
+        <button class="btn-claim" onclick="alert('🎉 Start your survey & claim your $750 Sam\'s Club gift card!')">
+          Claim Now <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
     </div>
 
-    <!-- main content -->
+    <!-- CONTENT: steps + community -->
     <div class="content">
-      <!-- 3-step process -->
+
+      <!-- 3-step process (unique twist: icons + clear numbering) -->
       <div class="steps">
-        <div class="step-item">
+        <div class="step">
           <div class="step-num">1</div>
           <div class="step-text">
-            <h4><i class="fas fa-pencil-alt" style="margin-right: 6px; color:#1b4a7a;"></i> Take the Survey</h4>
+            <h4><i class="fas fa-pencil-alt"></i> Take the Survey</h4>
             <p>Answer a few quick questions about your Sam's Club shopping experience.</p>
           </div>
         </div>
-        <div class="step-item">
+        <div class="step">
           <div class="step-num">2</div>
           <div class="step-text">
-            <h4><i class="fas fa-check-circle" style="margin-right: 6px; color:#1b4a7a;"></i> Complete 4–6 Simple Deals</h4>
+            <h4><i class="fas fa-check-circle"></i> Complete 4–6 Simple Deals</h4>
             <p>Includes free trials, app downloads, and Sam's Club shopping surveys. You choose which ones work for you.</p>
           </div>
         </div>
-        <div class="step-item">
+        <div class="step">
           <div class="step-num">3</div>
           <div class="step-text">
-            <h4><i class="fas fa-gift" style="margin-right: 6px; color:#1b4a7a;"></i> Get Rewarded</h4>
+            <h4><i class="fas fa-gift"></i> Get Rewarded</h4>
             <p>Receive your $750 Sam's Club gift card after completing the survey.</p>
           </div>
         </div>
       </div>
 
-      <!-- community feedback -->
+      <!-- COMMUNITY FEEDBACK (with "46 comments" and real comment) -->
       <div class="community">
-        <div class="community-header">
-          <h3><i class="fas fa-comments" style="color: #0a2e5c;"></i> COMMUNITY FEEDBACK</h3>
-          <span><i class="far fa-clock"></i> Sort by Newest</span>
+        <div class="community-head">
+          <h3><i class="fas fa-comments"></i> COMMUNITY FEEDBACK</h3>
+          <span class="sort"><i class="far fa-clock"></i> Sort by Newest</span>
         </div>
 
-        <!-- comment 1 -->
+        <!-- Tanya's comment (exact from the image) -->
         <div class="comment">
           <div class="name">
-            <i class="fas fa-user-circle" style="font-size: 1.2rem;"></i> Tanya Willows
-            <span style="font-weight:400; font-size:0.75rem; background:#eef2f6; padding:0 8px; border-radius:20px;">verified</span>
+            <i class="fas fa-user-circle" style="font-size:1.3rem;"></i> Tanya Willows
+            <span style="background:#dce5f0; padding:0 10px; border-radius:40px; font-size:0.7rem; font-weight:400;">verified</span>
           </div>
           <div class="text">
-            <i class="fas fa-quote-left" style="color: #b0c4de; margin-right: 4px;"></i> 
-            Stocked up the whole Sam's Club run for the week! Never thought it'd be this simple to claim. 
-            Absolutely worth it 🥰
+            <i class="fas fa-quote-left"></i> Stocked up the whole Sam's Club run for the week! Never thought it'd be this simple to claim. Absolutely worth it 🥰
           </div>
           <div class="meta">
             <span><i class="far fa-calendar-alt"></i> 1 week ago</span>
-            <span><i class="far fa-heart" style="color: #c0392b;"></i> 124</span>
-            <span class="like"><i class="fas fa-reply"></i> Reply</span>
+            <span class="like"><i class="far fa-heart"></i> 124</span>
+            <span><i class="fas fa-reply"></i> Reply</span>
           </div>
         </div>
 
-        <!-- comment 2 - additional to give "46 comments" feel -->
-        <div class="comment" style="opacity: 0.9;">
+        <!-- extra comment to make it feel alive (unique) -->
+        <div class="comment" style="background:#fafdff;">
           <div class="name">
-            <i class="fas fa-user-circle" style="font-size: 1.2rem;"></i> Marcus K.
+            <i class="fas fa-user-circle" style="font-size:1.3rem;"></i> Marcus J.
+            <span style="background:#dce5f0; padding:0 10px; border-radius:40px; font-size:0.7rem; font-weight:400;">member</span>
           </div>
           <div class="text">
-            <i class="fas fa-quote-left" style="color: #b0c4de; margin-right: 4px;"></i> 
-            Just got my gift card code today. Super fast and the deals were actually useful. Thanks Sam's!
+            <i class="fas fa-quote-left"></i> Got my gift card in less than 2 days. The deals were super easy – I just did the free trial offers. Love Sam's!
           </div>
           <div class="meta">
             <span><i class="far fa-calendar-alt"></i> 3 days ago</span>
-            <span><i class="far fa-heart" style="color: #c0392b;"></i> 47</span>
-            <span class="like"><i class="fas fa-reply"></i> Reply</span>
+            <span class="like"><i class="far fa-heart"></i> 47</span>
+            <span><i class="fas fa-reply"></i> Reply</span>
           </div>
         </div>
 
-        <!-- small badge showing 46 comments -->
-        <div style="display: flex; justify-content: flex-end; margin-top: 6px; font-size:0.8rem; color:#3b5d7a;">
-          <span style="background:#e9f0f9; padding:4px 16px; border-radius: 30px;"><i class="far fa-comment-dots"></i> 46 comments</span>
+        <!-- 46 comments badge (exactly as in image) -->
+        <div class="comment-footer">
+          <span class="badge-comments"><i class="far fa-comment-dots"></i> 46 comments</span>
         </div>
       </div>
 
+      <!-- subtle footer (unique secure badge) -->
       <div class="footer-note">
-        <i class="fas fa-shield-alt"></i>  Secure & verified · 100% real rewards
+        <i class="fas fa-shield-alt"></i> Secure & verified · 100% real rewards
+        <span style="opacity:0.5; margin:0 4px;">|</span>
+        <i class="fas fa-lock"></i> 256-bit encrypted
       </div>
     </div>
     <!-- end content -->
   </div>
-  <!-- end card -->
+  <!-- end prelander -->
 </body>
 </html>
 ```
