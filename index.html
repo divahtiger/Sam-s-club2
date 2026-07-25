@@ -1,11 +1,11 @@
-This is a complete HTML prelander page designed for the "Glitchy" offer. It's a clean, modern landing page that presents the offer details and guides visitors toward the conversion actions.
+Here is a clean, action-focused HTML prelander for your Glitchy offer. It presents the key details and prominently features a "Start Earning" button to guide visitors toward the conversion steps.
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Glitchy · prelander</title>
+  <title>Glitchy · Rewards prelander</title>
   <!-- Font Awesome (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -16,446 +16,472 @@ This is a complete HTML prelander page designed for the "Glitchy" offer. It's a 
       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
     body {
-      background: #f6f8fc;
+      background: linear-gradient(145deg, #f0f4fe 0%, #e8edf8 100%);
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 2rem 1rem 3rem;
-      min-height: 100vh;
+      align-items: center;
+      padding: 1.5rem;
     }
     .prelander {
-      max-width: 800px;
+      max-width: 860px;
       width: 100%;
       background: white;
-      border-radius: 36px 36px 28px 28px;
-      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15), 0 4px 18px rgba(0,0,0,0.03);
+      border-radius: 48px;
+      box-shadow: 0 30px 60px -20px rgba(0, 20, 40, 0.25), 0 8px 28px rgba(0,0,0,0.03);
       overflow: hidden;
-      transition: all 0.2s;
+      transition: 0.2s;
+      border: 1px solid rgba(255,255,255,0.5);
     }
-    /* header / glitchy */
-    .glitch-header {
-      padding: 1.6rem 1.8rem 0.8rem;
-      border-bottom: 1px solid #eef2f7;
+    /* header with glitchy logo */
+    .glitch-head {
+      padding: 1.6rem 2rem 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ecf2fa;
     }
-    .glitch-header h1 {
-      font-size: 2.1rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: #0b1a2f;
+    .brand {
       display: flex;
       align-items: center;
       gap: 8px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: -0.5px;
+      color: #0b1d32;
     }
-    .glitch-header h1 i {
+    .brand i {
       color: #7b4aff;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
+      transform: rotate(-8deg);
     }
-    .nav-links {
+    .brand small {
+      font-weight: 400;
+      font-size: 0.9rem;
+      background: #e5edfe;
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      margin-left: 6px;
+      color: #2f4b7a;
+    }
+    .nav-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 1.2rem;
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
+      gap: 0.4rem 1rem;
+      font-size: 0.8rem;
       font-weight: 500;
       color: #2f405b;
-      border-top: 1px solid #e9eff4;
-      padding-top: 0.9rem;
     }
-    .nav-links span {
-      color: #0b1a2f;
-      background: #f0f4fe;
-      padding: 0.2rem 0.8rem;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-    .nav-links i {
-      margin-right: 5px;
-      color: #5b6f8c;
-      font-size: 0.8rem;
-    }
-    .nav-links .badge {
-      background: #eef2f7;
-      border-radius: 40px;
-      padding: 0.2rem 0.8rem;
-    }
-    /* content */
-    .content {
-      padding: 1.5rem 1.8rem 1.8rem;
-    }
-    .offer-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #0b1a2f;
-      letter-spacing: -0.3px;
-      margin-bottom: 0.25rem;
-    }
-    .offer-sub {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.8rem;
-      margin: 0.5rem 0 1.2rem;
-      font-size: 0.9rem;
-      color: #3b4d66;
-      border-bottom: 1px solid #eef2f7;
-      padding-bottom: 1rem;
-    }
-    .offer-sub i {
-      color: #7b4aff;
-      width: 1.2rem;
-    }
-    .offer-card {
-      background: #f9fbff;
-      border-radius: 24px;
-      padding: 1.2rem 1.5rem;
-      border: 1px solid #e6edf6;
-      margin: 1.2rem 0 1.8rem;
-    }
-    .offer-card .tag {
-      display: inline-block;
-      background: #e3daff;
-      color: #3d1f8e;
-      font-weight: 600;
-      font-size: 0.7rem;
+    .nav-tabs span {
+      background: #f2f7ff;
       padding: 0.2rem 0.9rem;
       border-radius: 40px;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
+      border: 1px solid transparent;
     }
-    .offer-card .price {
-      font-size: 2.5rem;
+    .nav-tabs .highlight {
+      background: #7b4aff10;
+      border-color: #7b4aff30;
+      color: #3d1f8e;
+      font-weight: 600;
+    }
+
+    /* main content */
+    .main-content {
+      padding: 1.8rem 2rem 2.2rem;
+    }
+    .offer-badge {
+      display: inline-block;
+      background: #e9effa;
+      padding: 0.2rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #1d3b61;
+      margin-bottom: 0.6rem;
+      border: 1px solid #d5e0ef;
+    }
+    .offer-badge i {
+      color: #7b4aff;
+      margin-right: 6px;
+    }
+    .headline {
+      font-size: 2.1rem;
       font-weight: 700;
       color: #0b1a2f;
-      margin: 0.3rem 0 0.2rem;
-    }
-    .offer-card .price small {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #4e6583;
-      margin-left: 8px;
-    }
-    .offer-card .meta {
+      letter-spacing: -0.5px;
+      line-height: 1.2;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem 1.6rem;
-      margin-top: 0.4rem;
-      color: #2f405b;
-      font-size: 0.9rem;
+      align-items: baseline;
+      gap: 6px 12px;
     }
-    .offer-card .meta i {
-      color: #7b4aff;
-      width: 1.2rem;
-    }
-    .offer-card .payout-badge {
-      background: #1d2b41;
+    .headline .highlight-tag {
+      background: #1f2f4a;
       color: white;
+      font-size: 0.9rem;
+      padding: 0.2rem 1rem;
       border-radius: 60px;
-      padding: 0.3rem 1rem;
       font-weight: 600;
-      font-size: 0.75rem;
-      display: inline-block;
-      margin-top: 0.6rem;
     }
-    .steps-box {
-      background: #f2f6fe;
-      border-radius: 20px;
-      padding: 1.2rem 1.5rem;
-      margin: 1.8rem 0 1.5rem;
-      border-left: 5px solid #7b4aff;
-    }
-    .steps-box h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #0b1a2f;
+    .sub-meta {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 1rem 2.2rem;
+      margin-top: 0.4rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #ecf2fa;
+      font-size: 0.9rem;
+      color: #2f4b70;
     }
-    .steps-box ul {
-      list-style: none;
-      margin: 0.5rem 0 0.2rem;
-    }
-    .steps-box li {
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      display: flex;
-      gap: 10px;
-      color: #1d2f47;
-    }
-    .steps-box li i {
+    .sub-meta i {
       color: #7b4aff;
       width: 1.2rem;
+    }
+    .sub-meta strong {
+      color: #0b1a2f;
+    }
+
+    /* two column layout: left details / right card */
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      margin-top: 1.2rem;
+    }
+    @media (max-width: 640px) {
+      .offer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .headline { font-size: 1.8rem; }
+      .glitch-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+    }
+
+    .left-col ul {
+      list-style: none;
+      margin: 0.2rem 0 0.6rem;
+    }
+    .left-col ul li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f5fd;
+      font-size: 0.95rem;
+      color: #1d314a;
+    }
+    .left-col ul li:last-child {
+      border-bottom: none;
+    }
+    .left-col ul li i {
+      color: #7b4aff;
+      font-size: 1rem;
+      width: 1.4rem;
       margin-top: 2px;
     }
-    .warning-note {
-      background: #fff7e5;
-      border-radius: 18px;
-      padding: 1rem 1.2rem;
-      margin: 1.2rem 0;
-      font-size: 0.9rem;
-      border: 1px solid #ffe1b3;
-      color: #5f4b2a;
-    }
-    .warning-note i {
-      color: #b87c1e;
-      margin-right: 8px;
-    }
-    .creative-block {
-      background: #eef4fa;
-      border-radius: 18px;
-      padding: 1rem 1.2rem;
-      margin: 1.2rem 0;
+    .left-col .pill-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      gap: 6px 8px;
+      margin: 0.6rem 0 0.2rem;
     }
-    .creative-block .left {
-      font-weight: 500;
-      color: #0b1a2f;
-    }
-    .creative-block .left i {
-      color: #7b4aff;
-      margin-right: 8px;
-    }
-    .creative-block .right {
-      background: white;
-      padding: 0.4rem 1rem;
+    .left-col .pill-list span {
+      background: #f2f8ff;
+      padding: 0.2rem 1rem;
       border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #1d2f47;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    }
-    .tracking-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.5rem;
-      background: #fafcff;
-      padding: 1rem 0 0.2rem;
-      margin: 1rem 0 0.8rem;
-      border-top: 1px solid #e3eaf3;
-      font-size: 0.9rem;
-    }
-    .tracking-row i {
-      color: #7b4aff;
-      margin-right: 6px;
-    }
-    .guided-setup {
-      background: linear-gradient(145deg, #f3f7ff, #ffffff);
-      border-radius: 30px;
-      padding: 1.2rem 1.6rem;
-      border: 1px solid #d7e2f0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin: 1.5rem 0 0.2rem;
-    }
-    .guided-setup .left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .guided-setup .left i {
-      font-size: 1.6rem;
-      color: #7b4aff;
-    }
-    .guided-setup .left div {
+      font-size: 0.75rem;
       font-weight: 500;
-      color: #0b1a2f;
+      color: #1d3b61;
+      border: 1px solid #dce6f2;
     }
-    .guided-setup .left div small {
-      display: block;
-      font-weight: 400;
-      font-size: 0.8rem;
-      color: #4f688b;
-    }
-    .btn-start {
-      background: #1d2b41;
-      border: none;
-      color: white;
-      font-weight: 600;
-      padding: 0.7rem 1.8rem;
-      border-radius: 60px;
-      font-size: 0.95rem;
-      cursor: default;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: 0.1s;
-      letter-spacing: 0.3px;
-      background: #0b1a2f;
-    }
-    .btn-start i {
-      margin-right: 6px;
-    }
-    .footer-meta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 1rem 1.8rem 0.8rem;
-      font-size: 0.8rem;
-      color: #637a9b;
-      border-top: 1px solid #e6edf6;
-      margin-top: 1rem;
-    }
-    .footer-meta i {
+    .left-col .pill-list i {
       margin-right: 4px;
       color: #7b4aff;
     }
-    .footer-meta .right {
+
+    /* right card */
+    .right-card {
+      background: #f9fcff;
+      border-radius: 32px;
+      padding: 1.4rem 1.6rem;
+      border: 1px solid #e3ebf6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .right-card .price-big {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #0b1a2f;
+      line-height: 1;
+    }
+    .right-card .price-big small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #4e6583;
+      margin-left: 6px;
+    }
+    .right-card .payout-row {
       display: flex;
-      gap: 1.2rem;
-    }
-    .footer-meta .right span {
-      background: #eff4fa;
-      padding: 0.1rem 0.7rem;
-      border-radius: 40px;
-    }
-    .pill-small {
-      background: #eaf0f8;
-      padding: 0.2rem 0.8rem;
-      border-radius: 40px;
-      font-size: 0.7rem;
+      justify-content: space-between;
+      background: #eaf1fc;
+      border-radius: 60px;
+      padding: 0.3rem 1.2rem;
+      margin: 0.6rem 0 1rem;
       font-weight: 600;
-      color: #1d2f47;
+      font-size: 0.9rem;
+      color: #0b1a2f;
     }
-    hr {
+    .right-card .payout-row i {
+      color: #7b4aff;
+    }
+    .right-card .feature-list {
+      list-style: none;
+      margin: 0.6rem 0 1.2rem;
+    }
+    .right-card .feature-list li {
+      display: flex;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #1d314a;
+      padding: 0.25rem 0;
+    }
+    .right-card .feature-list i {
+      color: #7b4aff;
+      width: 1.2rem;
+    }
+
+    /* BIG ACTION BUTTON */
+    .action-btn {
+      display: block;
+      width: 100%;
+      background: #0b1a2f;
       border: none;
-      border-top: 1px solid #e6edf6;
-      margin: 0.2rem 0 1rem;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      padding: 1rem 0;
+      border-radius: 60px;
+      cursor: default;
+      box-shadow: 0 8px 20px rgba(11, 26, 47, 0.25);
+      transition: 0.1s;
+      letter-spacing: 0.5px;
+      text-align: center;
+      margin: 0.8rem 0 0.4rem;
     }
-    @media (max-width: 550px) {
-      .content { padding: 1rem; }
-      .glitch-header { padding: 1rem 1rem 0.3rem; }
-      .offer-card .price { font-size: 2rem; }
-      .guided-setup { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .btn-start { width: 100%; text-align: center; }
-      .footer-meta { flex-direction: column; gap: 6px; }
+    .action-btn i {
+      margin-right: 10px;
+      color: #b59eff;
+    }
+    .action-btn:hover {
+      background: #142b44;
+      box-shadow: 0 8px 24px rgba(11, 26, 47, 0.35);
+    }
+    .action-note {
+      text-align: center;
+      font-size: 0.7rem;
+      color: #59739b;
+      margin-top: 0.4rem;
+    }
+    .action-note i {
+      color: #7b4aff;
+    }
+
+    /* extra blocks */
+    .tracking-badge {
+      background: #f0f6fe;
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #1d314a;
+      margin-top: 0.8rem;
+    }
+    .tracking-badge i {
+      color: #7b4aff;
+    }
+    .guided-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #f2f8ff;
+      border-radius: 40px;
+      padding: 0.8rem 1.4rem;
+      margin: 1.2rem 0 0.4rem;
+      border: 1px solid #dae5f2;
+    }
+    .guided-row .left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+      color: #0b1a2f;
+    }
+    .guided-row .left i {
+      font-size: 1.4rem;
+      color: #7b4aff;
+    }
+    .guided-row .left small {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #4e6583;
+      display: block;
+    }
+
+    .footer {
+      padding: 1rem 2rem 1.2rem;
+      border-top: 1px solid #ecf2fa;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #59739b;
+    }
+    .footer i {
+      margin-right: 4px;
+      color: #7b4aff;
+    }
+    .footer .right span {
+      background: #edf4fc;
+      padding: 0.1rem 0.8rem;
+      border-radius: 40px;
+      margin-left: 6px;
+    }
+
+    .compliance-tag {
+      background: #fef7e9;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #6f5a2e;
+      border: 1px solid #fae1b3;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .compliance-tag i {
+      color: #b87c1e;
+      margin-right: 4px;
     }
   </style>
 </head>
 <body>
-  <div class="prelander">
+<div class="prelander">
 
-    <!-- header -->
-    <div class="glitch-header">
-      <h1><i class="fas fa-bolt"></i> GLITCHY</h1>
-      <div class="nav-links">
-        <span><i class="fas fa-home"></i> Home</span>
-        <span><i class="fas fa-tag"></i> Offers</span>
-        <span><i class="fas fa-chalkboard-teacher"></i> Master Classes</span>
-        <span><i class="fas fa-store-alt"></i> Marketplace</span>
-        <span><i class="fas fa-users"></i> Referrals</span>
-        <span><i class="fas fa-layer-group"></i> Levels</span>
-        <span class="badge"><i class="fas fa-coins"></i> Glitchy Capital</span>
-      </div>
+  <!-- header -->
+  <div class="glitch-head">
+    <div class="brand">
+      <i class="fas fa-bolt"></i> GLITCHY
+      <small>offers</small>
     </div>
-
-    <div class="content">
-
-      <!-- offer headline -->
-      <div class="offer-title">💰 Rewards US – Sam's Club</div>
-      <div class="offer-sub">
-        <span><i class="fas fa-dollar-sign"></i> $500 reward</span>
-        <span><i class="fas fa-chart-line"></i> CPA · Sweepstakes</span>
-        <span><i class="fas fa-flag-checkered"></i> <strong>$8.00</strong> payout</span>
-      </div>
-
-      <!-- about this offer -->
-      <div style="margin: 0.2rem 0 0.4rem; font-weight: 600; color: #0b1a2f; font-size: 0.9rem;">
-        <i class="fas fa-circle-info" style="color:#7b4aff; margin-right:6px;"></i> About this offer
-      </div>
-      <ul style="list-style: none; background: #f7faff; padding: 0.8rem 1.2rem; border-radius: 20px; border: 1px solid #e3ebf6; font-size: 0.92rem; color: #1d314a; line-height: 1.6; margin-bottom: 0.8rem;">
-        <li style="display: flex; gap: 10px; margin-bottom: 8px;"><i class="fas fa-check-circle" style="color:#7b4aff; width:1.2rem;"></i> Bridge page <strong>must mention</strong> steps on offer page.</li>
-        <li style="display: flex; gap: 10px; margin-bottom: 8px;"><i class="fas fa-check-circle" style="color:#7b4aff; width:1.2rem;"></i> Push leads to complete <strong>3–5 deals</strong> for higher payout.</li>
-        <li style="display: flex; gap: 10px; margin-bottom: 8px;"><i class="fas fa-check-circle" style="color:#7b4aff; width:1.2rem;"></i> Target <strong>25+ audience</strong> for better conversion.</li>
-        <li style="display: flex; gap: 10px; margin-bottom: 8px;"><i class="fas fa-check-circle" style="color:#7b4aff; width:1.2rem;"></i> <span style="background:#f0eefe; padding:0 8px; border-radius:40px;">Real traffic only</span> – bot traffic forbidden.</li>
-        <li style="display: flex; gap: 10px;"><i class="fas fa-check-circle" style="color:#7b4aff; width:1.2rem;"></i> <span style="background:#f0eefe; padding:0 8px; border-radius:40px;">No friends / surveys</span> – you will not get paid.</li>
-      </ul>
-
-      <!-- offer card -->
-      <div class="offer-card">
-        <span class="tag"><i class="fas fa-gem"></i> FEATURED</span>
-        <div class="price">$500 <small>Sam's Club reward</small></div>
-        <div class="meta">
-          <span><i class="fas fa-hand-holding-usd"></i> $8.00 CPA</span>
-          <span><i class="fas fa-trophy"></i> Sweepstakes</span>
-          <span><i class="fas fa-arrow-up"></i> High CR 25+</span>
-        </div>
-        <div class="payout-badge"><i class="fas fa-coins"></i> Payout: $8.00 / conversion</div>
-      </div>
-
-      <!-- steps & compliance -->
-      <div class="steps-box">
-        <h4><i class="fas fa-list-check"></i> Customer steps (bridge page)</h4>
-        <ul>
-          <li><i class="fas fa-1"></i> Complete the <strong>offer page</strong> steps exactly.</li>
-          <li><i class="fas fa-2"></i> Complete <strong>3–5 deals</strong> to unlock higher payout.</li>
-          <li><i class="fas fa-3"></i> Ensure audience <strong>25+</strong> (better conversion).</li>
-          <li><i class="fas fa-4"></i> Use real traffic – no bots or friends.</li>
-        </ul>
-        <div style="margin-top: 8px; background: #e9eefe; border-radius: 30px; padding: 0.3rem 1rem; font-size:0.8rem; display:inline-block;">
-          <i class="fas fa-shield-alt"></i> compliance: creatives must represent offer
-        </div>
-      </div>
-
-      <!-- warning & creative -->
-      <div class="warning-note">
-        <i class="fas fa-triangle-exclamation"></i> <strong>Important:</strong> All ad creatives must accurately represent the offer. Publishers with misleading content will be removed.
-      </div>
-
-      <div class="creative-block">
-        <span class="left"><i class="fas fa-paintbrush"></i> Creative Library</span>
-        <span class="right"><i class="fas fa-arrow-right"></i> examples for paid ads</span>
-      </div>
-
-      <!-- platforms -->
-      <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 0.8rem; margin: 0.6rem 0 0.4rem; font-size: 0.8rem; background: #f3f8ff; padding: 0.5rem 1rem; border-radius: 60px;">
-        <span><i class="fab fa-tiktok" style="color:#000;"></i> TikTok</span>
-        <span><i class="fab fa-instagram" style="color:#bc2a8d;"></i> Instagram</span>
-        <span><i class="fab fa-pinterest" style="color:#e60023;"></i> Pinterest</span>
-        <span><i class="fab fa-snapchat" style="color:#fffc00;"></i> Snapchat</span>
-        <span><i class="fab fa-youtube" style="color:#ff0000;"></i> Youtube</span>
-        <span class="pill-small"><i class="fas fa-bullhorn"></i> recommended</span>
-      </div>
-
-      <!-- conversion tracking -->
-      <div class="tracking-row">
-        <span><i class="fas fa-rotate"></i> Conversion tracking</span>
-        <span><i class="fas fa-server"></i> Glitchy server-side events</span>
-        <span><i class="fas fa-facebook"></i> Facebook pixel</span>
-        <span><i class="fas fa-share-nodes"></i> postback</span>
-      </div>
-
-      <!-- guided setup -->
-      <div class="guided-setup">
-        <div class="left">
-          <i class="fas fa-wand-magic-sparkles"></i>
-          <div>
-            Guided setup <small>Two quick questions · click-by-click · ~5 min</small>
-          </div>
-        </div>
-        <div class="btn-start"><i class="fas fa-arrow-right"></i> Start setup</div>
-      </div>
-
-      <!-- footer -->
-      <div class="footer-meta">
-        <span><i class="fas fa-cloud-sun"></i> 13°C Partly cloudy</span>
-        <div class="right">
-          <span><i class="far fa-clock"></i> 12:19 AM</span>
-          <span><i class="far fa-calendar-alt"></i> 7/23/2026</span>
-        </div>
-      </div>
-
-      <!-- micro copy (offer terms) -->
-      <div style="font-size:0.7rem; color:#6b7f9e; margin-top:0.4rem; padding:0.2rem 0.2rem; border-top:1px solid #ecf2f9; display:flex; justify-content:space-between; flex-wrap:wrap;">
-        <span><i class="fas fa-scale-balanced"></i> Offer terms · compliance enforced</span>
-        <span><i class="fas fa-ban"></i> Misleading content = removal</span>
-      </div>
+    <div class="nav-tabs">
+      <span><i class="fas fa-home"></i> Home</span>
+      <span><i class="fas fa-tag"></i> Offers</span>
+      <span><i class="fas fa-chalkboard-teacher"></i> Master</span>
+      <span><i class="fas fa-store"></i> Marketplace</span>
+      <span class="highlight"><i class="fas fa-gem"></i> Glitchy Capital</span>
     </div>
-    <!-- end content -->
   </div>
-  <!-- end prelander -->
+
+  <div class="main-content">
+
+    <!-- offer header -->
+    <div class="offer-badge"><i class="fas fa-crown"></i> FEATURED · SWEEPSTAKES</div>
+    <div class="headline">
+      <span>💰 Rewards US – Sam's Club</span>
+      <span class="highlight-tag">$500 value</span>
+    </div>
+    <div class="sub-meta">
+      <span><i class="fas fa-dollar-sign"></i> <strong>$8.00</strong> CPA payout</span>
+      <span><i class="fas fa-arrow-up"></i> High CR 25+ audience</span>
+      <span><i class="fas fa-flag"></i> Sweepstakes · US</span>
+    </div>
+
+    <!-- grid -->
+    <div class="offer-grid">
+      <div class="left-col">
+        <ul>
+          <li><i class="fas fa-clipboard-list"></i> <span><strong>Bridge page:</strong> list the exact steps from the offer page.</span></li>
+          <li><i class="fas fa-layer-group"></i> <span><strong>3–5 deals</strong> per lead = higher payout. Push for it.</span></li>
+          <li><i class="fas fa-users"></i> <span>Target <strong>25+ age</strong> – better conversion rate.</span></li>
+          <li><i class="fas fa-circle-exclamation"></i> <span><span style="background:#f0eefe; padding:0 8px; border-radius:40px;">Real traffic</span> · no bots, no friends.</span></li>
+          <li><i class="fas fa-paintbrush"></i> <span>Creative is key → check <strong>Creative Library</strong>.</span></li>
+        </ul>
+        <div class="pill-list">
+          <span><i class="fab fa-tiktok"></i> TikTok</span>
+          <span><i class="fab fa-instagram"></i> IG</span>
+          <span><i class="fab fa-pinterest"></i> Pinterest</span>
+          <span><i class="fab fa-snapchat"></i> Snap</span>
+          <span><i class="fab fa-youtube"></i> YT</span>
+          <span style="background:#1d2b41; color:white; border: none;"><i class="fas fa-bullhorn"></i> recommended</span>
+        </div>
+        <div style="margin-top: 0.8rem; background: #fff7e5; padding: 0.5rem 1rem; border-radius: 20px; border-left: 4px solid #b87c1e; font-size:0.85rem; color:#5f4b2a;">
+          <i class="fas fa-triangle-exclamation" style="color:#b87c1e; margin-right:8px;"></i> <strong>compliance:</strong> creatives must accurately represent the offer. Misleading content = removal.
+        </div>
+      </div>
+
+      <!-- right card with action -->
+      <div class="right-card">
+        <div class="price-big">
+          $500 <small>Sam's Club</small>
+        </div>
+        <div class="payout-row">
+          <span><i class="fas fa-hand-holding-usd"></i> Payout</span>
+          <span><strong>$8.00</strong> CPA</span>
+        </div>
+        <ul class="feature-list">
+          <li><i class="fas fa-check-circle"></i> Sweepstakes · US only</li>
+          <li><i class="fas fa-chart-simple"></i> 25+ audience = higher CR</li>
+          <li><i class="fas fa-arrow-trend-up"></i> Push 3–5 deals for bonus</li>
+        </ul>
+
+        <!-- BIG ACTION BUTTON -->
+        <div class="action-btn">
+          <i class="fas fa-rocket"></i> Start earning
+        </div>
+        <div class="action-note">
+          <i class="fas fa-circle-info"></i> You'll be guided to the offer page
+        </div>
+
+        <!-- conversion tracking mini -->
+        <div class="tracking-badge">
+          <i class="fas fa-rotate"></i> Conversion: server-side events · FB pixel · postback
+        </div>
+      </div>
+    </div>
+
+    <!-- guided setup row (bottom) -->
+    <div class="guided-row">
+      <div class="left">
+        <i class="fas fa-wand-magic-sparkles"></i>
+        <div>
+          Guided setup <small>2 quick questions · click-by-click · ~5 min</small>
+        </div>
+      </div>
+      <div style="background: #0b1a2f; color: white; padding: 0.4rem 1.6rem; border-radius: 60px; font-weight: 600; font-size: 0.9rem; cursor: default;">
+        <i class="fas fa-arrow-right"></i> Start setup
+      </div>
+    </div>
+
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div>
+      <span><i class="fas fa-cloud-sun"></i> 13°C Partly cloudy</span>
+      <span style="margin-left: 1rem;"><i class="far fa-clock"></i> 12:19 AM</span>
+      <span style="margin-left: 1rem;"><i class="far fa-calendar-alt"></i> 7/23/2026</span>
+    </div>
+    <div class="right">
+      <span class="compliance-tag"><i class="fas fa-scale-balanced"></i> offer terms</span>
+      <span><i class="fas fa-ban"></i> no misleading content</span>
+    </div>
+  </div>
+</div>
 </body>
 </html>
 ```
