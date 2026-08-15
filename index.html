@@ -58,25 +58,17 @@
     <!-- Tracking Script for CTA Click -->
     <script type="text/javascript">
         function trackAndRedirect() {
-            // Bemob click tracking
+            // Bemob click tracking URL
             var bemobClickUrl = 'https://go.onlineass.store/click';
             
-            // CTA URL (will be replaced by bemob callback)
+            // Redirect to Bemob click URL
             var ctaUrl = 'https://go.onlineass.store/click';
-            
-            // Fire Bemob click pixel
-            var img = new Image(1,1);
-            img.src = bemobClickUrl + '?r=' + encodeURIComponent(ctaUrl);
-            img.style.display = 'none';
-            document.body.appendChild(img);
             
             // Fire Facebook Lead event
             fbq('track', 'Lead');
             
-            // Redirect to Bemob (which will handle the final redirect)
-            setTimeout(function() {
-                window.open('https://go.onlineass.store/click', '_blank');
-            }, 150);
+            // Open the Bemob click URL in a new tab
+            window.open('https://go.onlineass.store/click', '_blank');
             
             return false;
         }
@@ -676,7 +668,7 @@
             </div>
         </div>
 
-        <!-- CTA BUTTON WITH BEMOB, MAXBOUNTY, AND FACEBOOK TRACKING -->
+        <!-- CTA BUTTON WITH BEMOB, AND FACEBOOK TRACKING -->
         <div class="cta-block">
             <a href="#" onclick="return trackAndRedirect();" class="cta-btn">
                 <i class="fas fa-gift"></i> Join Free & Start Earning
