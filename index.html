@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- ============================================================ -->
-<!-- CLIENT HINTS DELEGATION (for Bemob / go.orgsite.store) -->
+<!-- CLIENT HINTS DELEGATION (for Bemob) -->
 <!-- ============================================================ -->
-<meta http-equiv="delegate-ch" content="sec-ch-ua https://go.orgsite.store; sec-ch-ua-mobile https://go.orgsite.store; sec-ch-ua-arch https://go.orgsite.store; sec-ch-ua-model https://go.orgsite.store; sec-ch-ua-platform https://go.orgsite.store; sec-ch-ua-platform-version https://go.orgsite.store; sec-ch-ua-bitness https://go.orgsite.store; sec-ch-ua-full-version-list https://go.orgsite.store; sec-ch-ua-full-version https://go.orgsite.store">
+<meta http-equiv="delegate-ch" content="sec-ch-ua https://4fckt.bemobtrk.com; sec-ch-ua-mobile https://4fckt.bemobtrk.com; sec-ch-ua-arch https://4fckt.bemobtrk.com; sec-ch-ua-model https://4fckt.bemobtrk.com; sec-ch-ua-platform https://4fckt.bemobtrk.com; sec-ch-ua-platform-version https://4fckt.bemobtrk.com; sec-ch-ua-bitness https://4fckt.bemobtrk.com; sec-ch-ua-full-version-list https://4fckt.bemobtrk.com; sec-ch-ua-full-version https://4fckt.bemobtrk.com">
 
 <!-- ============================================================ -->
 <!-- META PIXEL (ID: 1428962595722262) -->
@@ -135,9 +135,9 @@ Earn Rewards.<br />
 </div>
 
 <!-- ============================================================ -->
-<!-- CTA LINK – UUID: 53cac562-4c8a-4c0a-9e19-dcc32118d95f (FreeCash) -->
+<!-- CTA LINK - YOUR BEMOB OFFER #1 -->
 <!-- ============================================================ -->
-<a href="https://go.orgsite.store/click/1?ns=c%3D53cac562-4c8a-4c0a-9e19-dcc32118d95f..l%3D2..a%3D0..b%3D0" id="ctaButton" class="cta-link">
+<a href="https://4fckt.bemobtrk.com/click/1?ns=c%3Da9dd0294-2342-45e8-a6ca-c2e25bab0463..l%3D2..a%3D0..b%3D0" id="ctaButton" class="cta-link">
 Join Free &amp; Start Earning
 <span class="arrow">→</span>
 </a>
@@ -197,45 +197,23 @@ value: 2.25
 </script>
 
 <!-- ============================================================ -->
-<!-- BEMOB LANDING PAGE PIXEL (FREECASH CAMPAIGN) - FIXED -->
+<!-- BEMOB LANDING PAGE PIXEL - YOUR CAMPAIGN -->
 <!-- ============================================================ -->
 <script type="text/javascript">
 function bemobCb(params) {
-    // Get the CTA link
-    var ctaLink = document.getElementById('ctaButton');
-    if (!ctaLink) return;
-    
-    // Get URL parameters
-    var urlParams = new URLSearchParams(window.location.search);
-    var clickId = urlParams.get('click_id') || '';
-    
-    // Build the base URL with your UUID
-    var baseUrl = 'https://go.orgsite.store/click/1?';
-    var finalUrl = baseUrl + 'ns=c%3D53cac562-4c8a-4c0a-9e19-dcc32118d95f..l%3D2..a%3D0..b%3D0';
-    
-    // Append click_id if present
-    if (clickId) {
-        finalUrl += '&click_id=' + encodeURIComponent(clickId);
-    }
-    
-    // Append any other common tracking parameters
-    var trackingParams = ['sub1', 'sub2', 'sub3', 'sub4', 'sub5', 'aff_id', 'campaign_id'];
-    trackingParams.forEach(function(param) {
-        var value = urlParams.get(param);
-        if (value) {
-            finalUrl += '&' + param + '=' + encodeURIComponent(value);
-        }
-    });
-    
-    // If params object has additional data from Bemob, append it
-    if (params && params.click_id) {
-        if (!clickId) {
-            finalUrl += '&click_id=' + encodeURIComponent(params.click_id);
+    // Get all links that contain the tracking domain
+    var t = params.trackingDomain+'/click/';
+    var re = new RegExp(t+'?(\\d*)');
+    var e = document.querySelectorAll('a[href*="'+t+'"]');
+    for (var i = 0; i < e.length; i++) {
+        var ex = re.exec(e[i].href);
+        if (ex) {
+            // Update the link with secure URL if available
+            if (params.ctaSecureUrl) {
+                e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[1] || 1);
+            }
         }
     }
-    
-    // Update the link
-    ctaLink.href = finalUrl;
 }
 </script>
 
@@ -244,14 +222,14 @@ function bemobCb(params) {
     var a = document.createElement("script");
     a.type = "text/javascript";
     a.async = true;
-    a.src = "https://go.orgsite.store/landing/a9dd0294-2342-45e8-a6ca-c2e25bab0463?callback=bemobCb&rule=1&path=1&landing=1&" + window.location.search.substring(1);
+    a.src = "https://4fckt.bemobtrk.com/landing/a9dd0294-2342-45e8-a6ca-c2e25bab0463?callback=bemobCb&rule=1&path=1&landing=1&" + window.location.search.substring(1);
     var b = document.getElementsByTagName("script")[0];
     b.parentNode.insertBefore(a, b);
 }();
 </script>
 
 <noscript>
-    <img src="https://go.orgsite.store/landing/a9dd0294-2342-45e8-a6ca-c2e25bab0463?rule=1&path=1&landing=1" alt="">
+    <img src="https://4fckt.bemobtrk.com/landing/a9dd0294-2342-45e8-a6ca-c2e25bab0463?rule=1&path=1&landing=1" alt="">
 </noscript>
 
 </body>
